@@ -1,0 +1,73 @@
+@import "__variables.scss";
+@import "__mixins.scss";
+@import "__dropdown-list-item.scss";
+
+.dropdown-container {
+	display: inline-block;
+	position: relative;
+	margin: 2em;
+	.cart-btn {
+		padding: $gap 1.5em;
+		border: 1px solid $secondary-color;
+		outline: none;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.dropdown-content {
+		display: none;
+		padding: $gap;
+		margin-top: 2em;
+		position: absolute;
+		background-color: $primary-color;
+		width: 450px;
+		right: 0;
+		z-index: 1;
+		&-arrow {
+			width: 50px;
+			height: 25px;
+			position: absolute;
+			top: -4%;
+			right: 0;
+			transform: translateX(-50%);
+			overflow: hidden;
+			&::after {
+				content: "";
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background: $primary-color;
+				transform: translateX(-50%) translateY(-50%) rotate(45deg);
+				top: 100%;
+				left: 50%;
+			}
+		}
+		&,
+		&-arrow::after {
+			-webkit-box-shadow: 0px 1px 11px 5px #000000;
+			box-shadow: 0px 1px 11px 5px #000000;
+		}
+
+		&.active {
+			display: block;
+		}
+		&-list {
+			list-style-type: none;
+		}
+		.title {
+			margin-bottom: 0.5em;
+		}
+
+		.btn-up,
+		.btn-down {
+			width: 100%;
+			padding: 0.5em 0.25em;
+			border: 1px solid $border-color;
+			color: $border-color;
+			margin-bottom: $gap;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}

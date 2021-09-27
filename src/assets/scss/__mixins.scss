@@ -1,0 +1,13 @@
+@mixin flexContainer($direction, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin actionButton($bg, $width, $border, $color) {
+	background-color: $bg;
+	width: $width;
+	border: $border;
+	color: $color;
+}

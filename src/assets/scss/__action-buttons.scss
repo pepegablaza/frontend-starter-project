@@ -1,0 +1,23 @@
+@import "__mixins.scss";
+@import "__variables.scss";
+
+.action-btn-container {
+	@include flexContainer(row, space-between, none);
+	.btn-edit,
+	.btn-checkout {
+		padding: $gap 0.5em;
+		text-decoration: none;
+		text-align: center;
+	}
+	.btn-edit {
+		@include actionButton(
+			$primary-color,
+			40%,
+			1px solid $secondary-color,
+			$secondary-color
+		);
+	}
+	.btn-checkout {
+		@include actionButton($checkout-bg, 58%, none, $primary-color);
+	}
+}

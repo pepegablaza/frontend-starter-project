@@ -1,0 +1,32 @@
+@import "__variables.scss";
+@import "__mixins.scss";
+
+.dropdown-list-item {
+	@include flexContainer(row, none, none);
+	border-bottom: 1.5px solid $border-color;
+	padding-bottom: $gap;
+	margin-bottom: $gap;
+	&:last-of-type {
+		border-bottom: none;
+		margin-bottom: $gap;
+		padding-bottom: 0;
+	}
+	.product-image {
+		overflow: hidden;
+		width: 30%;
+	}
+	.product-description {
+		margin-left: $gap;
+		position: relative;
+		width: 69%;
+		p {
+			color: $attribute-color;
+			&:last-of-type {
+				position: absolute;
+				bottom: 0;
+				font-weight: bold;
+				color: $secondary-color;
+			}
+		}
+	}
+}
